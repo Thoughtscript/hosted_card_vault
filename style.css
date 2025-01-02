@@ -37,18 +37,7 @@ header>h2 {
 main {
     position: absolute;
     top: 0;
-    /* Use exact height and match footer top */
-    /*  height: 2400px; */
     width: 100%;
-}
-
-::-webkit-scrollbar,
-::-webkit-scrollbar-thumb,
-::-webkit-scrollbar-button,
-::-webkit-scrollbar-track {
-    background: transparent;
-    width: 0;
-    z-index: 999;
 }
 
 main.galleryPage {}
@@ -111,4 +100,102 @@ main.galleryPage>.content>div.flex-container>div.image.apply-linear-gradient > s
     text-transform: uppercase;
     font-weight: 700;
     font-size: 15.5px;
+}
+
+footer {
+    padding: 25px;
+    margin: 25px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer>div#my-blog {
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    letter-spacing: 1.25px;
+    font-family: "JetBrains Mono", monospace;
+    padding: 10px 12px;
+    margin: 5px;
+    font-size: 14px;
+    box-shadow: 1px 2px 3px 1px gray;
+    border-bottom: 2px solid lightgreen;
+    width: 315px;
+    border-radius: 25px;
+    background-color: #000042;
+    box-shadow: 1px 2px 2px 1px purple;
+    border-left: 5px solid deeppink;
+    right: 15px;
+    position: relative;
+}
+
+footer>div#hosted-on {
+    width: 185px;
+    margin: 25px;
+    padding: 9.5px;
+    font-style: italic;
+    border-left: 5px solid #000042;
+    border-bottom: 5px solid lightgreen;
+    color: crimson;
+    padding-top: 30px;
+    font-weight: 600;
+}
+
+footer>div#hosted-on>span {
+    position: relative;
+    bottom: 1.5px;
+    font-style: normal;
+    color: black;
+}
+
+footer>div#my-blog>span {
+    position: relative;
+    bottom: 2px;
+}
+
+footer>div#my-blog>a,
+footer>div#hosted-on>a {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+footer>div#my-blog>a {
+    color: white;
+}
+
+footer>div#my-blog:hover {
+    background-color: #000042;
+    box-shadow: 1px 2px 2px 1px purple;
+    border-left: 5px solid deeppink;
+}
+
+footer>div#my-blog:hover,
+footer>div#my-blog>a:hover {
+    -webkit-transition: all .9s;
+    transition: all .9s;
+    opacity: .75;
+    box-shadow: 0px 0px 0px 0px transparent;
+    font-style: italic;
+}
+
+footer>div#hosted-on:hover {
+    color: lightgreen;
+    border-left: 5px solid orangered;
+    border-bottom: 5px solid deeppink;
+    -webkit-transition: all 1.9s;
+    transition: all 1.9s;
+}
+
+footer>div#hosted-on>a:hover {
+    -webkit-transition: all .9s;
+    transition: all .9s;
+    opacity: .75;
+    color: turquoise;
+}
+
+footer>div#date-generated {
+    font-size: 8px;
+    padding: 5px;
 }
