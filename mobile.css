@@ -8,4 +8,9 @@
     header#title-header>h2 {
         left: 0px;
     }
+
+    footer>div#date-generated {
+        font-size: 7px;
+        width:315px;
+    }
 }
