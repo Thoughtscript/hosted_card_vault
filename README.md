@@ -6,7 +6,7 @@
 
 Just another hosted static site. (But this time to help group and display my very modest foray into the world of **Graded** and **Vaulted** TCG's and CCG's!)
 
-This site is programmatically generated through: https://gitlab.com/Thoughtscript/card_lookup_helper through the command.
+This site is programmatically generated using my simple [Card Lookup Helper](https://gitlab.com/Thoughtscript/card_lookup_helper) tool through the command:
 
 ```bash
 bash run.sh
