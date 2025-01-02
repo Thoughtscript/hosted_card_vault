@@ -21,7 +21,6 @@ header {
     opacity: .9;
     background: purple;
     border-bottom: 10px solid deeppink;
-    box-shadow: 1px 3px 3px 2px lightgrey;
 }
 
 header>h2 {
@@ -202,4 +201,11 @@ footer>div#hosted-on>a:hover {
 footer>div#date-generated {
     font-size: 8px;
     padding: 5px;
+    color: whitesmoke;
+    background-color: #C850C0;
+    border-radius: 15px;
+    width:360px;
+    box-shadow: 1px 2px 2px 1px purple;
+    border-bottom: 1px solid deeppink;
+    border-left: 2px solid lightgreen;
 }

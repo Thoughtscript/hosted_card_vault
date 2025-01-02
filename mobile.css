@@ -1,0 +1,11 @@
+@media (max-width: 750px) {
+    header#title-header {
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    header#title-header>h2 {
+        left: 0px;
+    }
+}
