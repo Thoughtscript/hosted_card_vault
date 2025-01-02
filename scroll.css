@@ -4,12 +4,15 @@
 
 ::-webkit-scrollbar-track {
     background: crimson;
+    z-index: 0;
 }
 
 ::-webkit-scrollbar-thumb {
     background: orangered;
+    z-index: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: orangered;
+    z-index: 0;
 }
