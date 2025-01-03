@@ -13,4 +13,9 @@
         font-size: 7px;
         width:315px;
     }
+
+    main.galleryPage>.content>div.flex-container {
+        margin-bottom: 125px;
+        padding-bottom: 175px;
+    }
 }
