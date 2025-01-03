@@ -54,8 +54,8 @@ main.galleryPage>.content>div.flex-container {
     display: -webkit-flex;
     flex-wrap: wrap;
     width: 90%;
-    margin-bottom: 75px;
-    padding-bottom: 125px;
+    margin-bottom: 125px;
+    padding-bottom: 175px;
     padding-top: 125px;
     margin-top: 75px;
     border-right: 2.25px solid whitesmoke;
