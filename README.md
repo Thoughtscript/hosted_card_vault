@@ -9,7 +9,7 @@ Just another hosted static site. (But this time to help group and display my ver
 
 > *It's like having office desk photos ... of TRADING CARDS!!!*
 
-## Shout Outs and Contact
+## Shout Outs and Contact Info
 
 > Specialist thanks to the many outstanding traders, players, customers, card shops, enthusiasts, and trading platforms that made this small collection possible! 
 
