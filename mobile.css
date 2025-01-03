@@ -7,10 +7,15 @@
 
     header#title-header>h2 {
         left: 0px;
+        text-transform: none;
     }
 
     footer>div#date-generated {
         font-size: 7px;
         width:315px;
+    }
+
+    footer>div#hosted-on {
+        font-size: 9.25px;
     }
 }
