@@ -138,7 +138,7 @@ footer>div#hosted-on {
     border-left: 5px solid #000042;
     border-bottom: 5px solid lightgreen;
     color: crimson;
-    padding-top: 30px;
+    /* padding-top: 30px; */
     font-weight: 600;
 }
 
