@@ -6,7 +6,7 @@
 
 Just another hosted static site. (But this time to help group and display my very modest foray into the world of **Graded** and **Vaulted** TCG's and CCG's!) 
 
-It's a personal site *only* (intended to practice some e-commerce, UI/UX, and basic web dev - basically where I got [my start](https://www.nytimes.com/2016/02/21/jobs/building-a-better-bidding-war.html) before getting into digital banking/finance)!
+It's a *personal* site *only* (intended to practice some e-commerce, UI/UX, and basic web dev - basically where I got [my start](https://www.nytimes.com/2016/02/21/jobs/building-a-better-bidding-war.html) before getting into digital banking/finance)!
 
 > *It's like having office desk photos ... of TRADING CARDS!!!*
 
@@ -40,7 +40,7 @@ A gallery of cards I've collected from a variety of formats and games (and eithe
 1. Reduced manual handling of your most valuable cards.
 1. Risk averse - keep those cards safe from fires, earthquakes, and natural calamities. (Automatically insured too!)
 1. Grading assigns a "quality" score that can increase the value of the raw card.
-1. The "slab" itself is UV resistant (most "slabs" are acrylic polymers( and pretty much the best sleeve/protector you can get today. **They are PVC and acid-free (unlike, as it turns out, many toploaders)!**
+1. The "slab" itself is UV resistant (most "slabs" are acrylic polymers - BPA and PET free) and pretty much the best sleeve/protector you can get today. **They are PVC and acid-free (unlike, as it turns out, many toploaders)!**
 1. "Slabs" may potentially see play (IMO) given cools new widgets like: https://gradedguard.com/. I personally despise sleeves (they break, they sometimes have PVC in them, you have to resleeve, etc.)! Broken sleeves add up over time.
 1. Most importantly (IMO), you know you're getting a real card. Not a counterfeit.
 
