@@ -1,0 +1,51 @@
+@media (max-width: 950px) {
+    header#title-header {
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+    }
+
+    header#title-header>h2 {
+        left: 0px;
+        text-transform: none;
+    }
+
+    footer>div#date-generated {
+        font-size: 7px;
+        width: 315px;
+    }
+
+    footer>div#hosted-on {
+        font-size: 9.25px;
+    }
+}
+
+@media (max-width: 400px) {
+    footer>div#date-generated {
+        font-size: 6px;
+        width: 270px;
+    }
+
+    footer>div#my-blog {
+        font-size: 12px;
+        width: 285px;
+    }
+}
+
+@media (max-width: 370px) {
+    footer>div#my-blog {
+        font-size: 11px;
+        width: 265px;
+    }
+}
+
+@media (max-width: 350px) {
+    footer>div#my-blog {
+        font-size: 8.25px;
+        width: 205px;
+    }
+}
+
+.mac-adjust {
+    font-weight: 400 !important;
+}
