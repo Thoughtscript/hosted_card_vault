@@ -41,8 +41,27 @@ A gallery of cards I've collected from a variety of formats and games (and eithe
 1. Risk averse - keep those cards safe from fires, earthquakes, and natural calamities. (Automatically insured too!)
 1. Grading assigns a "quality" score that can increase the value of the raw card.
 1. The "slab" itself is UV resistant (most "slabs" are acrylic polymers - BPA and PET free) and pretty much the best sleeve/protector you can get today. **They are PVC and acid-free (unlike, as it turns out, many toploaders)!**
-1. "Slabs" may potentially see play (IMO) given cools new widgets like: https://gradedguard.com/. I personally despise sleeves (they break, they sometimes have PVC in them, you have to resleeve, etc.)! Broken sleeves add up over time.
+1. "Slabs" may potentially see play (IMO) given cool new widgets like: https://gradedguard.com/. I personally despise sleeves (they break, they sometimes have PVC in them, you have to resleeve, etc.)! Broken sleeves add up over time.
 1. Most importantly (IMO), you know you're getting a real card. Not a counterfeit.
+
+## Analysis
+
+Definitions:
+
+* *Cost of Grading* = the cost to *Grade* a card through PSA, CGC, etc.
+* **Raw Value** = the face-value of an un-*Graded* NM card.
+* **Slabbed Value** = recent buying/selling prices for a *Graded* card.
+* **Input Cost** = *Cost of Grading* `+` **Raw Value**
+
+Some assumptions, empirical observations, and data points being tested:
+
+1. **Slabbed Value** `>=` **Input Cost**
+2. Eventually, the supply of **Raw** cards will diminish to near-`0` populations.
+3. **Slabbed Value** is a composite of rarity (artificial, actual, etc.), aesthetics, playability, demand, age, nostalgia, and so on.
+4. If people continue to buy up **Raw** cards (reducing **Raw** supply) and have them *Graded* (increasing **Slabbed** supply), **Slabbed Values** will nevertheless continue to increase (since age, playability, and **Raw Value** will continue to determine **Slabbed Value**).
+5. The best time to buy cards is within a year after they're released **Raw** (but not immediately after set release). More precisely, the interval `<=` 12 months and `>=` 3 months.
+6. The best growth of a card occurs if one holds a card purchased during the above window, has it graded (at an `8` to `10` level) and for about a decade.
+7. Cards graded at `8` - `10` will see a premium reflected in their **Slabbed Value**. Cards at `7` shouldn't dip below (*Cost of Grading* `+` **Raw Value**).
 
 ## Details of Use
 
