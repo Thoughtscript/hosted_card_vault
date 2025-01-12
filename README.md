@@ -60,8 +60,9 @@ Some assumptions, empirical observations, and data points being tested:
 3. **Slabbed Value** is a composite of rarity (artificial, actual, etc.), aesthetics, playability, demand, age, nostalgia, and so on.
 4. If people continue to buy up **Raw** cards (reducing **Raw** supply) and have them *Graded* (increasing **Slabbed** supply), **Slabbed Values** will nevertheless continue to increase (since age, playability, and **Raw Value** will continue to determine **Slabbed Value**).
 5. The best time to buy cards is within a year after they're released **Raw** (but not immediately after set release). More precisely, the interval `<=` 12 months and `>=` 3 months.
-6. The best growth of a card occurs if one holds a card purchased during the above window, has it graded (at an `8` to `10` level) and for about a decade.
-7. Cards graded at `8` - `10` will see a premium reflected in their **Slabbed Value**. Cards at `7` shouldn't dip below (*Cost of Grading* `+` **Raw Value**).
+6. The best growth of a card occurs if one holds a card purchased during the above window, has it *Graded* (at an `8` to `10` level) and for about a decade.
+7. Cards *Graded* at `8` - `10` will see a premium reflected in their **Slabbed Value**. Cards at `7` shouldn't dip below **Input Cost**.
+8. Even cards *Graded* below `8` will often increase to multiples of their **Raw Value** after 10 years.
 
 ## Details of Use
 
