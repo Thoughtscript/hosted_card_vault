@@ -38,6 +38,7 @@ main {
     position: absolute;
     top: 0;
     width: 100%;
+    content-visibility: auto;
 }
 
 main.galleryPage {}
