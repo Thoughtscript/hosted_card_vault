@@ -12,7 +12,7 @@ window.onload = function() {
         HO.className = `${HO.className} mac-adjust`
     }
 
-    const ELS = document.querySelectorAll('div.image')
+    const ELS = document.querySelectorAll('.image')
 
     for (let i = 0; i < ELS.length; i++) {
         ELS[i].addEventListener('click', () => {

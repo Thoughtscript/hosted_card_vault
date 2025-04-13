@@ -118,7 +118,7 @@ main.galleryPage>.content>div.flex-container>div.card-wrapper>div.pricing>a:hove
     transition: 1s all;
 }
 
-main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image {
+main.galleryPage>.content>div.flex-container>div.card-wrapper>.image {
     background: whitesmoke;
     background-position: 0 0;
     background-size: cover;
@@ -130,7 +130,7 @@ main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image {
     margin-bottom: 15px;
 }
 
-main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image:hover {
+main.galleryPage>.content>div.flex-container>div.card-wrapper>.image:hover {
     filter: saturate(0%) hue-rotate(0deg) blur(0px);
     -webkit-transition: filter 2s;
     transition: all 2s;
@@ -138,7 +138,7 @@ main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image:hover {
     opacity: .35;
 }
 
-main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image {
+main.galleryPage>.content>div.flex-container>div.card-wrapper>.image {
     text-align: center;
     align-content: center;
     justify-content: center;
@@ -147,12 +147,12 @@ main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image {
     box-shadow: 2px 3px 4px 2px lightgrey;
 }
 
-main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image.apply-linear-gradient {
+main.galleryPage>.content>div.flex-container>div.card-wrapper>.image.apply-linear-gradient {
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
 
-main.galleryPage>.content>div.flex-container>div.card-wrapper>div.image.apply-linear-gradient>span {
+main.galleryPage>.content>div.flex-container>div.card-wrapper>.image.apply-linear-gradient>span {
     color: white;
     letter-spacing: 2px;
     text-transform: uppercase;
