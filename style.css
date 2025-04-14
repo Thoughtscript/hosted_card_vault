@@ -147,7 +147,18 @@ main.galleryPage>.content>div.flex-container>div.card-wrapper>.image {
     box-shadow: 2px 3px 4px 2px lightgrey;
 }
 
-main.galleryPage>.content>div.flex-container>div.card-wrapper>.image.apply-linear-gradient {
+/* 
+ * This is responsible for providing a default background 
+ * during initial page loading.
+ * 
+ * A customized missing src/image div.image is used for scenarios 
+ * where an image absence can be predicted.
+ */
+main.galleryPage>.content>div.flex-container>div.card-wrapper>img.image {
+    color: transparent;
+}
+
+main.galleryPage>.content>div.flex-container>div.card-wrapper>.image { /*.apply-linear-gradient { */
     background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
 }
