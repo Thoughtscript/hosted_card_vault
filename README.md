@@ -6,7 +6,7 @@
 
 Just another hosted static site. (But this time to help group and display my very modest foray into the world of **Graded** and **Vaulted** TCG's and CCG's!) 
 
-It's a *personal* site *only* (intended to practice some e-commerce, UI/UX, and basic web dev - basically where I got [my start](https://www.nytimes.com/2016/02/21/jobs/building-a-better-bidding-war.html) before getting into digital banking/finance)!
+It's a *personal* site *only* (non-commercial, intended to practice some e-commerce, UI/UX, and basic web dev - basically where I got [my start](https://www.nytimes.com/2016/02/21/jobs/building-a-better-bidding-war.html) before getting into digital banking/finance)!
 
 > *It's like having office desk photos ... of TRADING CARDS!!!*
 
@@ -14,7 +14,7 @@ It's a *personal* site *only* (intended to practice some e-commerce, UI/UX, and 
 
 > Specialist thanks to the many outstanding traders, players, customers, card shops, enthusiasts, and trading platforms that made this small collection possible! 
 
-Turns out many find over a period spanning almost a decade(ish) is starting to coalesce into a cool (*Heirloom?* Possibly?) collection! Many kudos and my sincerest well wishes to all others embarking on the same journey!
+Turns out many find over a period spanning almost a decade(ish) is starting to coalesce into a cool (*Heirloom*? For my future kids if any? Possibly?) collection! Many kudos and my sincerest well wishes to all others embarking on the same journey!
 
 > Please [PM](https://www.thoughtscript.io/about) me for inquests, trades, requests, questions, and the like!
 
