@@ -23,11 +23,21 @@ window.onload = function() {
     setTimeout(() => {
         const ELS = document.getElementsByClassName('image')
 
-        for (let i = 0; i < ELS.length; i++) {
-            let O = ELS[i].src
-            ELS[i].src = ""
-            ELS[i].src = O 
+        console.log("Retrying failed images...")
+
+        const retryImg = async(EL) => {
+            let O = EL.src
+            EL.src = ""
+            EL.src = O 
         }
 
-    }, 10000)
+        let promises = []
+
+        for (let i = 0; i < ELS.length; i++) {
+            promises.push(retryImg(ELS[i]))
+        }
+
+        Promise.all(promises)
+
+    }, 45000)
 }
