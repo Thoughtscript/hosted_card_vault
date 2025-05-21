@@ -1,6 +1,6 @@
 'use strict'
 
-window.onload = function() {
+window.onload = function () {
 
     const UA = window.navigator.userAgent
 
@@ -19,25 +19,31 @@ window.onload = function() {
             window.open(ELS[i].getAttribute('data-attr'))
         })
     }
-        
-    setTimeout(() => {
-        const ELS = document.getElementsByClassName('image')
 
-        console.log("Retrying failed images...")
+    const retry = (ms) => {
+        setTimeout(() => {
+            const ELS = document.getElementsByClassName('image')
 
-        const retryImg = async(EL) => {
-            let O = EL.src
-            EL.src = ""
-            EL.src = O 
-        }
+            console.log(`Retrying failed images at ${ms}...`)
 
-        let promises = []
+            const retryImg = async (EL) => {
+                let O = EL.src
+                EL.src = ""
+                EL.src = O
+            }
 
-        for (let i = 0; i < ELS.length; i++) {
-            promises.push(retryImg(ELS[i]))
-        }
+            let promises = []
 
-        Promise.all(promises)
+            for (let i = 0; i < ELS.length; i++) {
+                promises.push(retryImg(ELS[i]))
+            }
 
-    }, 45000)
+            Promise.all(promises)
+
+        }, ms)
+    }
+
+    retry(45000)
+
+    retry(120000)
 }
