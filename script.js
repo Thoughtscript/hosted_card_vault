@@ -19,4 +19,15 @@ window.onload = function() {
             window.open(ELS[i].getAttribute('data-attr'))
         })
     }
+        
+    setTimeout(() => {
+        const ELS = document.getElementsByClassName('image')
+
+        for (let i = 0; i < ELS.length; i++) {
+            let O = ELS[i].src
+            ELS[i].src = ""
+            ELS[i].src = O 
+        }
+
+    }, 10000)
 }
