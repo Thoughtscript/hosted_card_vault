@@ -21,11 +21,12 @@ window.onload = function () {
     }
 
     // Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR Large Images loaded but not cached from GitHub (no CDN).
-    // Surprisingly there's no way to access:
+    // 1. The JavaScript Console object can't access the message directly - it's a reference to the Console and STDOUT but doesn't expose internal messages or state.
+    
+    // 2. Testing: the Image failure above may be flagged through JavaScript. See below.
 
-    // 1. That Console message directly - it's browser-based and not printed through JavaScript.
-    // 2. JavaScript apparently still doesn't emit any such event on Image failures.
-    // 3. The underlying HTML doesn't update with some attribute on the Element reflecting the success or failure of the Image.
+    // 3. The underlying HTML doesn't update with some attribute on the Element reflecting the 
+    // success or failure of the Image. If 2. fails, then there's no way to easily a.) retry or b.) check the outcome of the image loading.
     const retry = (ms) => {
 
         // Testing simple approach to address this issue.
@@ -53,4 +54,13 @@ window.onload = function () {
     }
 
     retry(150000)
+
+    document.querySelectorAll('div.content')[0].addEventListener('error', e => {
+        console.log(e)
+    })
+
+    onerror = (message, source, lineno, colno, error) => { 
+        console.log(error)
+        console.log(message)
+    }
 }
