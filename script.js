@@ -20,11 +20,20 @@ window.onload = function () {
         })
     }
 
+    // Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR Large Images loaded but not cached from GitHub (no CDN).
+    // Surprisingly there's no way to access:
+
+    // 1. That Console message directly - it's browser-based and not printed through JavaScript.
+    // 2. JavaScript apparently still doesn't emit any such event on Image failures.
+    // 3. The underlying HTML doesn't update with some attribute on the Element reflecting the success or failure of the Image.
     const retry = (ms) => {
-        setTimeout(() => {
+
+        // Testing simple approach to address this issue.
+        // For very slow Image loading sessions, retry repeatedly.
+        setInterval(() => {
             const ELS = document.getElementsByClassName('image')
 
-            console.log(`Retrying failed images at ${ms}...`)
+            console.log(`Retrying failed images at ${ms} ms intervals ...`)
 
             const retryImg = async (EL) => {
                 let O = EL.src
@@ -43,7 +52,5 @@ window.onload = function () {
         }, ms)
     }
 
-    retry(45000)
-
-    retry(120000)
+    retry(150000)
 }
