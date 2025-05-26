@@ -24,6 +24,8 @@ window.onload = function () {
     const setErrorEventListeners = () => {
         const ELS = document.getElementsByClassName('image')
 
+        // TBD - exponential backoff...
+        // Probably unnecessary here for GitHub hosting but would be of use elsewhere.
         for (let i = 0; i < ELS.length; i++) {
             ELS[i].addEventListener('error', (e) => {
                 const EL = e.currentTarget,
