@@ -53,14 +53,25 @@ window.onload = function () {
         }, ms)
     }
 
-    retry(150000)
+    //retry(150000)
 
     document.querySelectorAll('div.content')[0].addEventListener('error', e => {
-        console.log(e)
+        console.log(`div.content: ${e}`)
     })
 
     onerror = (message, source, lineno, colno, error) => { 
-        console.log(error)
-        console.log(message)
+        console.log(`window: ${error} | ${message}`)
     }
+
+    const setErrorEventListeners = () => {
+        const ELS = document.getElementsByClassName('image')
+
+        for (let i = 0; i < ELS.length; i++) {
+            ELS[i].addEventListener('error', (e) => {
+                console.log(`event listener: ${e}`)
+            })
+        }
+    }
+    
+    setErrorEventListeners()
 }
