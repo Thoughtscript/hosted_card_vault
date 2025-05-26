@@ -38,6 +38,7 @@ window.onload = function () {
             MR = parseInt(EL.getAttribute("max-retries")),
             CR = parseInt(EL.getAttribute('current-retries'))
 
+        EL.setAttribute('retry', true)
         EL.setAttribute('failed', true)
 
         if (CR < MR) {
@@ -47,6 +48,7 @@ window.onload = function () {
             if (O.length) {
                 EL.src = ""
                 EL.src = O
+                // If successful this triggers the 'load' event
             }
 
             EL.setAttribute("current-retries", CR + 1)
@@ -68,12 +70,14 @@ window.onload = function () {
         for (let i = 0; i < ELS.length; i++) {
             ELS[i].setAttribute('max-retries', 3)
             ELS[i].setAttribute('current-retries', 0)
-            ELS[i].setAttribute('failed', true)
+            ELS[i].setAttribute('retry', true)
+            ELS[i].setAttribute('failed', false)
             
             ELS[i].addEventListener('error', retryImage)
             ELS[i].addEventListener('abort', retryImage)
             ELS[i].addEventListener('load', (e) => {
                 const EL = e.currentTarget
+                EL.setAttribute('retry', false)
                 EL.setAttribute('failed', false)
             })
         }
@@ -97,13 +101,16 @@ window.onload = function () {
                 if (O.length) {
                     EL.src = ""
                     EL.src = O
+                    // If successful this triggers the 'load' event
                 }
             }
 
             let promises = []
 
             for (let i = 0; i < ELS.length; i++) {
-                if (ELS[i].getAttribute('failed')) {
+                // This is a String value
+                if (ELS[i].getAttribute('retry') === 'true' || ELS[i].getAttribute('failed') === 'true') {
+                    ELS[i].setAttribute('retry', false)
                     promises.push(asyncRetryImage(ELS[i]))
                 }
             }
@@ -113,5 +120,5 @@ window.onload = function () {
         }, ms)
     }
 
-    retryLoop(120000)
+    retryLoop(180000)
 }
