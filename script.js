@@ -2,6 +2,10 @@
 
 window.onload = function () {
 
+    /************************************
+     *               MAC                *
+     ************************************/
+
     const UA = window.navigator.userAgent
 
     if (UA.includes('AppleWebKit')) {
@@ -12,6 +16,10 @@ window.onload = function () {
         HO.className = `${HO.className} mac-adjust`
     }
 
+    /************************************
+     *                PSA               *
+     ************************************/
+
     const ELS = document.querySelectorAll('.image')
 
     for (let i = 0; i < ELS.length; i++) {
@@ -20,16 +28,22 @@ window.onload = function () {
         })
     }
 
+    /************************************
+     *               RETRY              *
+     ************************************/
+
     const retryImage = (e) => {
         const EL = e.currentTarget,
             NM = EL.alt || EL.getAttribute("data-attr"),
             MR = parseInt(EL.getAttribute("max-retries")),
             CR = parseInt(EL.getAttribute('current-retries'))
 
+        EL.setAttribute('failed', true)
+
         if (CR < MR) {
             console.log(`${ NM } image loading failed - retrying ${CR + 1} / ${MR}`)
 
-            let O = EL.src
+            const O = EL.src
             if (O.length) {
                 EL.src = ""
                 EL.src = O
@@ -41,6 +55,7 @@ window.onload = function () {
         if (CR >= MR) {
             console.log(`${ NM } max retries ${MR} reached - removing Event Listener...`)
             EL.removeEventListener('error', retryImage)
+            EL.removeEventListener('abort', retryImage)
         }
     }
 
@@ -53,9 +68,50 @@ window.onload = function () {
         for (let i = 0; i < ELS.length; i++) {
             ELS[i].setAttribute('max-retries', 3)
             ELS[i].setAttribute('current-retries', 0)
+            ELS[i].setAttribute('failed', true)
+            
             ELS[i].addEventListener('error', retryImage)
+            ELS[i].addEventListener('abort', retryImage)
+            ELS[i].addEventListener('load', (e) => {
+                const EL = e.currentTarget
+                EL.setAttribute('failed', false)
+            })
         }
     }
     
     setErrorEventListeners()
+
+    /************************************
+     *              UNCAUGHT            *
+     ************************************/
+
+    const retryLoop = (ms) => {
+
+        setInterval(() => {
+            const ELS = document.getElementsByClassName('image')
+
+            console.log(`Polling every ${ms} ms to retry uncaught failed images ...`)
+
+            const asyncRetryImage = async (EL) => {
+                const O = EL.src
+                if (O.length) {
+                    EL.src = ""
+                    EL.src = O
+                }
+            }
+
+            let promises = []
+
+            for (let i = 0; i < ELS.length; i++) {
+                if (ELS[i].getAttribute('failed')) {
+                    promises.push(asyncRetryImage(ELS[i]))
+                }
+            }
+
+            Promise.all(promises)
+
+        }, ms)
+    }
+
+    retryLoop(120000)
 }
