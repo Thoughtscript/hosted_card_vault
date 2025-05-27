@@ -1,5 +1,7 @@
 'use strict'
 
+const ENABLE_FULL_LOGGING = true
+
 window.onload = function () {
 
     /************************************
@@ -34,7 +36,8 @@ window.onload = function () {
 
     const retryImage = (e) => {
         const EL = e.currentTarget,
-            NM = EL.alt || EL.getAttribute("data-attr"),
+            NM = EL.alt,
+            LINK_URL = EL.getAttribute("data-attr"),
             MR = parseInt(EL.getAttribute("max-retries")),
             CR = parseInt(EL.getAttribute('current-retries'))
 
@@ -42,7 +45,7 @@ window.onload = function () {
         EL.setAttribute('failed', true)
 
         if (CR < MR) {
-            console.log(`${ NM } image loading failed - retrying ${CR + 1} / ${MR}`)
+           console.log(`[ Image: ${ NM } | Certifying URL: ${ LINK_URL } ] - retrying load failure ${CR + 1} / ${MR}`)
 
             const O = EL.src
             if (O.length) {
@@ -55,7 +58,7 @@ window.onload = function () {
         }
 
         if (CR >= MR) {
-            console.log(`${ NM } max retries ${MR} reached - removing Event Listener...`)
+            if (ENABLE_FULL_LOGGING) console.log(`${ NM } max retries ${MR} reached - removing Event Listener...`)
             EL.removeEventListener('error', retryImage)
             EL.removeEventListener('abort', retryImage)
         }
@@ -91,28 +94,47 @@ window.onload = function () {
 
     const retryLoop = (ms) => {
 
-        setInterval(() => {
+        const POLL_ID = setInterval(() => {
             const ELS = document.getElementsByClassName('image')
 
-            console.log(`Polling every ${ms} ms to retry uncaught failed images ...`)
+            if (ENABLE_FULL_LOGGING) console.log(`Polling every ${ms} ms to retry uncaught failed images ...`)
 
             const asyncRetryImage = async (EL) => {
-                const O = EL.src
+                const O = EL.src,
+                    NM = EL.alt,
+                    LINK_URL = EL.getAttribute("data-attr"),
+                    MR = parseInt(EL.getAttribute("max-retries")),
+                    CR = parseInt(EL.getAttribute('current-retries'))
+
+                if (ENABLE_FULL_LOGGING) console.log(`[ Image: ${ NM } | Certifying URL: ${ LINK_URL } ] - retrying in case of uncaught failures ${CR + 1} / ${MR}`)
+
                 if (O.length) {
                     EL.src = ""
                     EL.src = O
                     // If successful this triggers the 'load' event
                 }
+
+                EL.setAttribute("current-retries", CR + 1)
             }
 
             let promises = []
 
             for (let i = 0; i < ELS.length; i++) {
+                const EL = ELS[i]
+
                 // This is a String value
-                if (ELS[i].getAttribute('retry') === 'true' || ELS[i].getAttribute('failed') === 'true') {
-                    ELS[i].setAttribute('retry', false)
-                    promises.push(asyncRetryImage(ELS[i]))
+                if (EL.getAttribute('retry') === 'true' || EL.getAttribute('failed') === 'true') {
+                    const MR = parseInt(EL.getAttribute("max-retries")),
+                        CR = parseInt(EL.getAttribute('current-retries'))
+
+                    if (CR < MR) promises.push(asyncRetryImage(EL))
+                    else EL.setAttribute('retry', false)
                 }
+            }
+
+            if (!promises.length) {
+                if (ENABLE_FULL_LOGGING) console.log(`No Images left - clearing Poll...`)
+                clearInterval(POLL_ID)
             }
 
             Promise.all(promises)
