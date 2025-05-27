@@ -2,6 +2,8 @@
 
 const ENABLE_FULL_LOGGING = true
 
+const ENABLE_INIT_RETRY = false // See comment below.
+
 window.onload = function () {
 
     /************************************
@@ -71,10 +73,14 @@ window.onload = function () {
         // TBD - exponential backoff...
         // Probably unnecessary here for GitHub hosting but would be of use elsewhere.
         for (let i = 0; i < ELS.length; i++) {
-            ELS[i].setAttribute('max-retries', 3)
-            ELS[i].setAttribute('current-retries', 0)
-            ELS[i].setAttribute('retry', true)
-            ELS[i].setAttribute('failed', false)
+            // For performance and load order reasons, these can be set in the HTML file itself.
+            // ENABLE_INIT_RETRY add these values to Elements whether they have those or not.
+            if (ENABLE_INIT_RETRY) {
+                ELS[i].setAttribute('max-retries', 3)
+                ELS[i].setAttribute('current-retries', 0)
+                ELS[i].setAttribute('retry', true)
+                ELS[i].setAttribute('failed', false)
+            }
             
             ELS[i].addEventListener('error', retryImage)
             ELS[i].addEventListener('abort', retryImage)
