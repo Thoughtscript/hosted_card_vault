@@ -18,6 +18,10 @@
     footer>div#hosted-on {
         font-size: 9.25px;
     }
+
+    footer>div#my-blog {
+        width: 300px;
+    }
 }
 
 @media (max-width: 400px) {
