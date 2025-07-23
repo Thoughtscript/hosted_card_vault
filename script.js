@@ -18,6 +18,9 @@ window.onload = function () {
 
         const HO = document.getElementById('hosted-on')
         HO.className = `${HO.className} mac-adjust`
+
+        const MB = document.getElementById('my-blog')
+        MB.className = `${MB.className} mac-adjust`
     }
 
     /************************************

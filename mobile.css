@@ -53,3 +53,7 @@
 .mac-adjust {
     font-weight: 400 !important;
 }
+
+footer>div#my-blog.mac-adjust {
+    width: 300px !important;
+}
