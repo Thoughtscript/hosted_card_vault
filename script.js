@@ -18,7 +18,9 @@ window.onload = function () {
 
         const HO = document.getElementById('hosted-on')
         HO.className = `${HO.className} mac-adjust`
+    }
 
+    if (UA.includes('AppleWebKit') && UA.includes('Macintosh')) {
         const MB = document.getElementById('my-blog')
         MB.className = `${MB.className} mac-adjust`
     }
